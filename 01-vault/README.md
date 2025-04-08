@@ -14,8 +14,7 @@ Solution:
 - **Front-Run Attack**: An attacker sends a large amount of tokens directly to the vault before a victim’s deposit. This inflates `totalAssets` but leaves `totalSupply` unchanged.
 - **Zero Shares for Victim**: Because the ratio is skewed, `(victimDeposit * totalSupply) / (inflated totalAssets)` truncates to zero.
 - **Attacker Redeems All**: The attacker still holds nearly 100% of the shares and can withdraw all vault assets—including the victim’s deposit.
-
-**Payoff**: The attacker effectively steals the victim’s deposit, gaining full control over the vault’s assets for minimal cost.
+- **Payoff**: The attacker effectively steals the victim’s deposit, gaining full control over the vault’s assets for minimal cost.
 
 Sources:
 1. "https://docs.openzeppelin.com/contracts/5.x/erc4626"
