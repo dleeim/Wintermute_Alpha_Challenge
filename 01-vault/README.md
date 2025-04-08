@@ -7,6 +7,7 @@ Question:
 - c) Write code for the bot that can carry out the exploit (don’t worry about returning user funds).
 
 Solution: 
+
 **a) Vulnerability Summary (Older ERC-4626 Vaults)**
 
 - **Naive Formula**: The vault uses `(depositAmount * totalSupply) / totalAssets` to mint new shares, but doesn’t account for *direct* token transfers that bypass `deposit()`.
@@ -16,5 +17,6 @@ Solution:
 
 **Payoff**: The attacker effectively steals the victim’s deposit, gaining full control over the vault’s assets for minimal cost.
 
-Source 1: "https://docs.openzeppelin.com/contracts/5.x/erc4626"
-Source 2: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/audits/2022-10-ERC4626.pdf"
+Sources:
+1. "https://docs.openzeppelin.com/contracts/5.x/erc4626"
+2. "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/audits/2022-10-ERC4626.pdf"
